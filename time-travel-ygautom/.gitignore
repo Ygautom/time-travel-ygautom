@@ -1,0 +1,9 @@
+# Build artifacts
+target/
+*.class
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
