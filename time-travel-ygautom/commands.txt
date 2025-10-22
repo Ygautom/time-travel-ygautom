@@ -1,0 +1,90 @@
+# ------------------------------
+# Section 1 – Git Commands
+# ------------------------------
+
+# Repository initialization and setup
+git init
+git checkout -b main
+git add .
+git commit -m "chore: initial repo setup"
+
+# Remote linking and pushing
+git remote add origin https://github.com/Ygautom/time-travel-ygautom.git
+git push -u origin main
+
+# Branching
+git branch author/idea-sprint
+git branch editor/review
+git checkout author/idea-sprint
+git checkout editor/review
+
+# Creating feature branches
+git branch feat/layout
+git branch feat/content
+git branch feat/polish
+
+# Adding and committing files
+git add README.md
+git add LICENSE CODE_OF_CONDUCT.md
+git add RELEASE_NOTES.md GIT_JOURNAL.md
+git commit -m "docs: add project documentation files"
+
+# Merging and resolving conflicts
+git merge author/idea-sprint
+git merge editor/review
+# (Resolved merge conflict manually in zine/intro.md)
+
+# Tagging releases
+git tag v0.1
+git tag -a v1.0 -m "Final release"
+
+# Pushing branches and tags
+git push -u origin author/idea-sprint
+git push -u origin editor/review
+git push origin --tags
+
+# GitHub Pull Requests handled through the web interface
+# PR #4 – Add zine intro and structure
+# PR #5 – Resolve merge conflicts
+# PR #6 – Add documentation and finalize main
+
+# Useful commands during troubleshooting
+git status
+git log --oneline --graph
+git restore <filename>
+git diff
+git rm --cached <filename>
+git branch -d <branch_name>
+
+# ------------------------------
+# Section 2 – Maven Commands
+# ------------------------------
+
+# Verify Maven installation
+mvn -v
+
+# Create new project
+mvn archetype:generate -DgroupId=edu.asu.ygautom \
+-DartifactId=ygautom-Maven-Practice \
+-DarchetypeArtifactId=maven-archetype-quickstart \
+-DarchetypeVersion=1.4 -DinteractiveMode=false
+
+# Build lifecycle
+mvn compile
+mvn test
+mvn clean
+mvn package
+
+# Verify output
+ls target/
+
+# ------------------------------
+# Section 3 – Graphviz Commands
+# ------------------------------
+
+# Verify installation
+dot -V
+
+# Generate visualization
+dot -Tpng graphviz/test.dot -o graphviz/test.png
+open graphviz/test.png
